@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flexbox Tasks 1-20</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+padding:20px;
+background:#f2f2f2;
+}
+
+section{
+background:white;
+padding:20px;
+margin-bottom:30px;
+border-radius:10px;
+box-shadow:0 0 5px gray;
+}
+
+h2{
+margin-bottom:15px;
+color:#333;
+}
+
+.box{
+background:orange;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+.card{
+border:1px solid #ccc;
+padding:15px;
+text-align:center;
+background:white;
+}
+
+.card img{
+width:100%;
+height:150px;
+object-fit:cover;
+}
+
+button{
+padding:10px 20px;
+margin-top:10px;
+background:orange;
+color:white;
+border:none;
+cursor:pointer;
+}
+
+/* Task1 */
+.t1{
+display:flex;
+gap:20px;
+}
+.t1 .box{
+flex:1;
+}
+
+/* Task2 */
+.nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:#333;
+padding:15px;
+color:white;
+}
+.nav ul{
+display:flex;
+gap:20px;
+list-style:none;
+}
+
+/* Task3 */
+.cards{
+display:flex;
+gap:20px;
+}
+.cards .card{
+flex:1;
+}
+
+/* Task4 */
+.gallery{
+display:flex;
+gap:20px;
+}
+.gallery div{
+width:120px;
+height:120px;
+}
+
+/* Task5 */
+.price{
+display:flex;
+gap:20px;
+}
+.plan{
+flex:1;
+background:#ddd;
+padding:30px;
+text-align:center;
+}
+
+/* Task6 */
+.vertical{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+/* Task7 */
+.columns{
+display:flex;
+}
+.left{
+width:200px;
+background:#ddd;
+padding:20px;
+}
+.right{
+flex:1;
+background:#eee;
+padding:20px;
+}
+
+/* Task8 */
+.profile{
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:10px;
+}
+.profile img{
+width:120px;
+height:120px;
+border-radius:50%;
+}
+
+/* Task9 */
+.center{
+display:flex;
+justify-content:center;
+gap:10px;
+}
+
+/* Task10 */
+.spacebetween{
+display:flex;
+justify-content:space-between;
+}
+
+/* Task11 */
+.demo{
+display:flex;
+margin:10px 0;
+background:#ddd;
+padding:10px;
+}
+.start{justify-content:flex-start;}
+.end{justify-content:flex-end;}
+.cen{justify-content:center;}
+.between{justify-content:space-between;}
+.around{justify-content:space-around;}
+.even{justify-content:space-evenly;}
+
+/* Task12 */
+.centerbox{
+display:flex;
+justify-content:center;
+align-items:center;
+height:300px;
+background:#ddd;
+}
+
+/* Task13 */
+.align{
+display:flex;
+height:250px;
+border:2px solid black;
+gap:10px;
+}
+.align div{
+width:70px;
+background:orange;
+}
+.h1{height:100px;}
+.h2{height:150px;}
+.h3{height:80px;}
+.h4{height:200px;}
+
+/* Task14 */
+.login{
+display:flex;
+justify-content:center;
+align-items:center;
+height:300px;
+}
+.login-card{
+background:white;
+padding:20px;
+width:300px;
+box-shadow:0 0 10px gray;
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+/* Task15 */
+.wrap{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+}
+.wrap .box{
+width:150px;
+}
+
+/* Task16 */
+.products{
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+}
+.products .card{
+width:200px;
+}
+
+/* Task17 */
+.photos{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+}
+.photos img{
+width:150px;
+height:100px;
+}
+
+/* Task18 */
+.grow{
+display:flex;
+}
+.grow div:nth-child(1){flex:1;}
+.grow div:nth-child(2){flex:2;}
+.grow div:nth-child(3){flex:3;}
+
+/* Task19 */
+.basis{
+display:flex;
+gap:10px;
+}
+.basis div:nth-child(1){flex-basis:100px;}
+.basis div:nth-child(2){flex-basis:200px;}
+.basis div:nth-child(3){flex-basis:300px;}
+.basis div:nth-child(4){flex-basis:auto;flex:1;}
+
+/* Task20 */
+.dashboard{
+display:flex;
+flex-direction:column;
+}
+
+.header,.footer{
+background:#333;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+.main{
+display:flex;
+}
+
+.sidebar{
+width:200px;
+background:#555;
+color:white;
+padding:20px;
+}
+
+.content{
+flex:1;
+padding:20px;
+}
+
+.card-row{
+display:flex;
+gap:15px;
+margin-bottom:20px;
+}
+
+.card-row .card{
+flex:1;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+table,th,td{
+border:1px solid black;
+padding:10px;
+text-align:center;
+}
+
+@media(max-width:768px){
+.cards,.price,.gallery,.card-row,.main{
+flex-direction:column;
+}
+.sidebar{
+width:100%;
+}
+}
+</style>
+</head>
+
+<body>
+
+<section>
+<h2>Task 1</h2>
+<div class="t1">
+<div class="box">1</div>
+<div class="box">2</div>
+<div class="box">3</div>
+<div class="box">4</div>
+<div class="box">5</div>
+</div>
+</section>
+
+<section>
+<h2>Task 2</h2>
+<div class="nav">
+<h3>Logo</h3>
+<ul>
+<li>Home</li>
+<li>About</li>
+<li>Services</li>
+<li>Contact</li>
+</ul>
+</div>
+</section>
+
+<section>
+<h2>Task 3</h2>
+<div class="cards">
+<div class="card">
+<img src="https://via.placeholder.com/300x150">
+<h3>Card 1</h3>
+<p>Description</p>
+<button>Read More</button>
+</div>
+<div class="card">
+<img src="https://via.placeholder.com/300x150">
+<h3>Card 2</h3>
+<p>Description</p>
+<button>Read More</button>
+</div>
+<div class="card">
+<img src="https://via.placeholder.com/300x150">
+<h3>Card 3</h3>
+<p>Description</p>
+<button>Read More</button>
+</div>
+</div>
+</section>
+
+<section>
+<h2>Task 4</h2>
+<div class="gallery">
+<div style="background:red"></div>
+<div style="background:green"></div>
+<div style="background:blue"></div>
+<div style="background:orange"></div>
+<div style="background:purple"></div>
+<div style="background:brown"></div>
+</div>
+</section>
+
+<section>
+<h2>Task 5</h2>
+<div class="price">
+<div class="plan">Basic</div>
+<div class="plan">Standard</div>
+<div class="plan">Premium</div>
+</div>
+</section>
+
+<section>
+<h2>Task 6</h2>
+<div class="vertical">
+<div class="box">1</div>
+<div class="box">2</div>
+<div class="box">3</div>
+<div class="box">4</div>
+<div class="box">5</div>
+</div>
+</section>
+
+<section>
+<h2>Task 7</h2>
+<div class="columns">
+<div class="left">Menu</div>
+<div class="right">Main Content</div>
+</div>
+</section>
+
+<section>
+<h2>Task 8</h2>
+<div class="profile">
+<img src="https://via.placeholder.com/120">
+<h3>John Doe</h3>
+<p>Developer</p>
+<p>Profile Description</p>
+</div>
+</section>
+
+<section>
+<h2>Task 9</h2>
+<div class="center">
+<div class="box">1</div>
+<div class="box">2</div>
+<div class="box">3</div>
+<div class="box">4</div>
+<div class="box">5</div>
+</div>
+</section>
+
+<section>
+<h2>Task 10</h2>
+<div class="spacebetween">
+<div class="box">1</div>
+<div class="box">2</div>
+<div class="box">3</div>
+<div class="box">4</div>
+<div class="box">5</div>
+</div>
+</section>
+
+<section>
+<h2>Task 11</h2>
+<div class="demo start"><div class="box">A</div><div class="box">B</div></div>
+<div class="demo end"><div class="box">A</div><div class="box">B</div></div>
+<div class="demo cen"><div class="box">A</div><div class="box">B</div></div>
+<div class="demo between"><div class="box">A</div><div class="box">B</div></div>
+<div class="demo around"><div class="box">A</div><div class="box">B</div></div>
+<div class="demo even"><div class="box">A</div><div class="box">B</div></div>
+</section>
+
+<section>
+<h2>Task 12</h2>
+<div class="centerbox">
+<div class="box">Center</div>
+</div>
+</section>
+
+<section>
+<h2>Task 13</h2>
+<div class="align" style="align-items:center;">
+<div class="h1"></div>
+<div class="h2"></div>
+<div class="h3"></div>
+<div class="h4"></div>
+</div>
+</section>
+
+<section>
+<h2>Task 14</h2>
+<div class="login">
+<div class="login-card">
+<h3>Login</h3>
+<input type="text" placeholder="Username">
+<input type="password" placeholder="Password">
+<button>Login</button>
+</div>
+</div>
+</section>
+
+<section>
+<h2>Task 15</h2>
+<div class="wrap">
+<div class="box">1</div><div class="box">2</div><div class="box">3</div>
+<div class="box">4</div><div class="box">5</div><div class="box">6</div>
+<div class="box">7</div><div class="box">8</div><div class="box">9</div>
+<div class="box">10</div><div class="box">11</div><div class="box">12</div>
+</div>
+</section>
+
+<section>
+<h2>Task 16</h2>
+<div class="products">
+<div class="card">Product 1</div>
+<div class="card">Product 2</div>
+<div class="card">Product 3</div>
+<div class="card">Product 4</div>
+<div class="card">Product 5</div>
+<div class="card">Product 6</div>
+<div class="card">Product 7</div>
+<div class="card">Product 8</div>
+<div class="card">Product 9</div>
+<div class="card">Product 10</div>
+</div>
+</section>
+
+<section>
+<h2>Task 17</h2>
+<div class="photos">
+<img src="https://via.placeholder.com/150x100">
+<img src="https://via.placeholder.com/150x100">
+<img src="https://via.placeholder.com/150x100">
+<img src="https://via.placeholder.com/150x100">
+<img src="https://via.placeholder.com/150x100">
+<img src="https://via.placeholder.com/150x100">
+<img src="https://via.placeholder.com/150x100">
+<img src="https://via.placeholder.com/150x100">
+<img src="https://via.placeholder.com/150x100">
+<img src="https://via.placeholder.com/150x100">
+<img src="https://via.placeholder.com/150x100">
+<img src="https://via.placeholder.com/150x100">
+<img src="https://via.placeholder.com/150x100">
+<img src="https://via.placeholder.com/150x100">
+<img src="https://via.placeholder.com/150x100">
+</div>
+</section>
+
+<section>
+<h2>Task 18</h2>
+<div class="grow">
+<div class="box">1</div>
+<div class="box">2</div>
+<div class="box">3</div>
+</div>
+</section>
+
+<section>
+<h2>Task 19</h2>
+<div class="basis">
+<div class="box">100px</div>
+<div class="box">200px</div>
+<div class="box">300px</div>
+<div class="box">Auto</div>
+</div>
+</section>
+
+<section>
+<h2>Task 20 - Dashboard</h2>
+<div class="dashboard">
+<div class="header">Header</div>
+
+<div class="main">
+<div class="sidebar">Sidebar</div>
+
+<div class="content">
+<div class="card-row">
+<div class="card">Card 1</div>
+<div class="card">Card 2</div>
+<div class="card">Card 3</div>
+<div class="card">Card 4</div>
+</div>
+
+<table>
+<tr><th>ID</th><th>Name</th></tr>
+<tr><td>1</td><td>John</td></tr>
+<tr><td>2</td><td>David</td></tr>
+</table>
+</div>
+</div>
+
+<div class="footer">Footer</div>
+</div>
+</section>
+
+</body>
+</html>
